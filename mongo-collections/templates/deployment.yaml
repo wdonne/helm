@@ -30,18 +30,16 @@ spec:
           {{- if .Values.args }}
           args: {{ toYaml .Values.args | nindent 12 }}
           {{- end }}
-          {{- if .Values.watchNamespaces }}
           env:
+          {{- if .Values.watchNamespaces }}
             - name: WATCH_NAMESPACES
               value: {{ .Values.watchNamespaces | join "," | quote }}
           {{- end }}
           {{- if .Values.configFile }}
-          env:
             - name: CONFIG_FILE
               value: {{ .Values.configFile }}
           {{- end }}
           {{- if .Values.logLevel }}
-          env:
             - name: RUST_LOG
               value: {{ .Values.logLevel }}
           {{- end }}
