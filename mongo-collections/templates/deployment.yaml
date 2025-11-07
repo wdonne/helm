@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-collections-controller
+  namespace: {{ .Release.Namespace }}
+  {{- if .Values.annotations }}
+  annotations: {{ toYaml .Values.annotations | nindent 4 }}
+  {{- end }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mongo-collections-controller
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mongo-collections-controller
+      {{- if .Values.podAnnotations }}
+      annotations: {{ toYaml .Values.podAnnotations | nindent 8 }}
+      {{- end }}
+    spec:
+      containers:
+        - name: mongo-collections-controller
+          image: "wdonne/mongo-collections:{{ .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          resources: {{ toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.command }}
+          command: {{ toYaml .Values.command | nindent 12 }}
+          {{- end }}
+          {{- if .Values.args }}
+          args: {{ toYaml .Values.args | nindent 12 }}
+          {{- end }}
+          {{- if .Values.watchNamespaces }}
+          env:
+            - name: WATCH_NAMESPACES
+              value: {{ .Values.watchNamespaces | join "," | quote }}
+          {{- end }}
+          {{- if .Values.configFile }}
+          env:
+            - name: CONFIG_FILE
+              value: {{ .Values.configFile }}
+          {{- end }}
+          {{- if .Values.logLevel }}
+          env:
+            - name: RUST_LOG
+              value: {{ .Values.logLevel }}
+          {{- end }}
+          {{- if .Values.ports }}
+          ports: {{ toYaml .Values.ports | nindent 12 }}
+          {{- end }}
+          {{- if .Values.securityContext }}
+          securityContext: {{ toYaml .Values.securityContext | nindent 12 }}
+          {{- end }}
+          {{- if .Values.volumeMounts }}
+          volumeMounts: {{ toYaml .Values.volumeMounts | nindent 12 }}
+          {{- end }}
+      {{- if .Values.nodeSelector }}
+      nodeSelector: {{ toYaml .Values.nodeSelector | nindent 8 }}
+      {{- end }}
+      serviceAccountName: mongo-collections-controller
+      {{- if .Values.volumes }}
+      volumes: {{ toYaml .Values.volumes | nindent 8 }}
+      {{- end }}

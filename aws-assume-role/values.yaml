@@ -1,0 +1,42 @@
+# Annotations for the deployment.
+annotations: { }
+
+# The command arguments for the controller pod.
+args: [ ]
+
+# The command for the controller pod.
+command: [ ]
+
+# The image pull policy for the controller pod.
+imagePullPolicy: IfNotPresent
+
+# Can be any of debug, error, info, trace or warn.
+logLevel: info
+
+# The node selector for the controller pod.
+nodeSelector: { }
+
+# Annotations for the pod.
+podAnnotations: { }
+
+# The ports for the controller pod.
+ports: [ ]
+
+# The resources for the controller pod.
+resources:
+  requests:
+    cpu: 10m
+    memory: 5Mi
+  limits:
+    memory: 5Mi
+
+# The security context for the controller pod.
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  seccompProfile:
+    type: RuntimeDefault
+  runAsNonRoot: true
+  readOnlyRootFilesystem: true

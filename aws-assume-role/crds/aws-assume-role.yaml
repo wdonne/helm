@@ -1,0 +1,90 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: awsassumeroles.pincette.net
+spec:
+  group: pincette.net
+  names:
+    categories: []
+    kind: AWSAssumeRole
+    plural: awsassumeroles
+    shortNames: []
+    singular: awsassumerole
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns: []
+    name: v1
+    schema:
+      openAPIV3Schema:
+        description: Auto-generated derived type for AWSAssumeRoleSpec via `CustomResource`
+        properties:
+          spec:
+            properties:
+              durationSeconds:
+                format: int32
+                nullable: true
+                type: integer
+              ecrRepositoryUrl:
+                nullable: true
+                type: string
+              roleName:
+                type: string
+              secretName:
+                type: string
+              secretType:
+                enum:
+                - EcrDockerConfigJson
+                - File
+                - Map
+                type: string
+            required:
+            - roleName
+            - secretName
+            - secretType
+            type: object
+          status:
+            nullable: true
+            properties:
+              conditions:
+                items:
+                  properties:
+                    lastTransitionTime:
+                      type: string
+                    message:
+                      type: string
+                    reason:
+                      type: string
+                    status:
+                      type: string
+                    type:
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - message
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+              health:
+                properties:
+                  status:
+                    type: string
+                required:
+                - status
+                type: object
+              phase:
+                type: string
+            required:
+            - conditions
+            - health
+            - phase
+            type: object
+        required:
+        - spec
+        title: AWSAssumeRole
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

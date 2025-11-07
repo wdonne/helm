@@ -1,0 +1,354 @@
+---
+apiVersion: "apiextensions.k8s.io/v1"
+kind: "CustomResourceDefinition"
+metadata:
+  name: "mongocollections.pincette.net"
+spec:
+  group: "pincette.net"
+  names:
+    categories:
+    - "controllers"
+    kind: "MongoCollection"
+    plural: "mongocollections"
+    shortNames:
+    - "mc"
+    singular: "mongocollection"
+  scope: "Namespaced"
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: ".status.health.status"
+      name: "Health"
+      type: "string"
+    - jsonPath: ".status.phase"
+      name: "Phase"
+      type: "string"
+    - jsonPath: ".metadata.creationTimestamp"
+      name: "Age"
+      type: "date"
+    name: "v1"
+    schema:
+      openAPIV3Schema:
+        description: "Auto-generated derived type for MongoCollectionSpec via `CustomResource`"
+        properties:
+          spec:
+            properties:
+              capped:
+                nullable: true
+                type: "boolean"
+              changeStreamPreAndPostImages:
+                nullable: true
+                type: "boolean"
+              clustered:
+                nullable: true
+                type: "boolean"
+              collation:
+                nullable: true
+                properties:
+                  alternate:
+                    default: "non-ignorable"
+                    enum:
+                    - "non-ignorable"
+                    - "shifted"
+                    type: "string"
+                  backwards:
+                    default: false
+                    type: "boolean"
+                  caseFirst:
+                    default: "off"
+                    enum:
+                    - "upper"
+                    - "lower"
+                    - "off"
+                    type: "string"
+                  caseLevel:
+                    default: false
+                    type: "boolean"
+                  locale:
+                    type: "string"
+                  maxVariable:
+                    default: "punct"
+                    enum:
+                    - "punct"
+                    - "space"
+                    type: "string"
+                  normalization:
+                    default: false
+                    type: "boolean"
+                  numericOrdering:
+                    default: false
+                    type: "boolean"
+                  strength:
+                    default: 3
+                    enum:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+                    type: "integer"
+                required:
+                - "locale"
+                type: "object"
+              expireAfterSeconds:
+                format: "uint64"
+                minimum: 0.0
+                nullable: true
+                type: "integer"
+              indexes:
+                items:
+                  properties:
+                    keys:
+                      items:
+                        properties:
+                          direction:
+                            enum:
+                            - 1
+                            - -1
+                            - null
+                            nullable: true
+                            type: "integer"
+                          field:
+                            type: "string"
+                          indexType:
+                            enum:
+                            - "hashed"
+                            - "text"
+                            - "2d"
+                            - "2dsphere"
+                            - null
+                            nullable: true
+                            type: "string"
+                        required:
+                        - "field"
+                        type: "object"
+                      type: "array"
+                    options:
+                      nullable: true
+                      properties:
+                        bits:
+                          format: "uint32"
+                          minimum: 0.0
+                          nullable: true
+                          type: "integer"
+                        collation:
+                          nullable: true
+                          properties:
+                            alternate:
+                              default: "non-ignorable"
+                              enum:
+                              - "non-ignorable"
+                              - "shifted"
+                              type: "string"
+                            backwards:
+                              default: false
+                              type: "boolean"
+                            caseFirst:
+                              default: "off"
+                              enum:
+                              - "upper"
+                              - "lower"
+                              - "off"
+                              type: "string"
+                            caseLevel:
+                              default: false
+                              type: "boolean"
+                            locale:
+                              type: "string"
+                            maxVariable:
+                              default: "punct"
+                              enum:
+                              - "punct"
+                              - "space"
+                              type: "string"
+                            normalization:
+                              default: false
+                              type: "boolean"
+                            numericOrdering:
+                              default: false
+                              type: "boolean"
+                            strength:
+                              default: 3
+                              enum:
+                              - 1
+                              - 2
+                              - 3
+                              - 4
+                              - 5
+                              type: "integer"
+                          required:
+                          - "locale"
+                          type: "object"
+                        defaultLanguage:
+                          nullable: true
+                          type: "string"
+                        expireAfterSeconds:
+                          format: "uint64"
+                          minimum: 0.0
+                          nullable: true
+                          type: "integer"
+                        hidden:
+                          nullable: true
+                          type: "boolean"
+                        languageOverride:
+                          nullable: true
+                          type: "string"
+                        max:
+                          format: "double"
+                          nullable: true
+                          type: "number"
+                        min:
+                          format: "double"
+                          nullable: true
+                          type: "number"
+                        name:
+                          nullable: true
+                          type: "string"
+                        partialFilterExpression:
+                          additionalProperties: true
+                          nullable: true
+                          type: "object"
+                        sparse:
+                          nullable: true
+                          type: "boolean"
+                        sphereIndexVersion:
+                          format: "uint32"
+                          minimum: 0.0
+                          nullable: true
+                          type: "integer"
+                        textIndexVersion:
+                          format: "uint32"
+                          minimum: 0.0
+                          nullable: true
+                          type: "integer"
+                        unique:
+                          nullable: true
+                          type: "boolean"
+                        weights:
+                          additionalProperties:
+                            format: "uint32"
+                            minimum: 0.0
+                            type: "integer"
+                          nullable: true
+                          type: "object"
+                        wildcardProjection:
+                          additionalProperties:
+                            enum:
+                            - 0
+                            - 1
+                            type: "integer"
+                          nullable: true
+                          type: "object"
+                      type: "object"
+                  required:
+                  - "keys"
+                  type: "object"
+                nullable: true
+                type: "array"
+              max:
+                format: "uint64"
+                minimum: 0.0
+                nullable: true
+                type: "integer"
+              name:
+                nullable: true
+                type: "string"
+              size:
+                format: "uint64"
+                minimum: 0.0
+                nullable: true
+                type: "integer"
+              timeSeries:
+                nullable: true
+                properties:
+                  bucketMaxSpanSeconds:
+                    format: "uint64"
+                    minimum: 0.0
+                    nullable: true
+                    type: "integer"
+                  bucketRoundingSeconds:
+                    format: "uint64"
+                    minimum: 0.0
+                    nullable: true
+                    type: "integer"
+                  granularity:
+                    enum:
+                    - "hours"
+                    - "minutes"
+                    - "seconds"
+                    - null
+                    nullable: true
+                    type: "string"
+                  metaField:
+                    nullable: true
+                    type: "string"
+                  timeField:
+                    type: "string"
+                required:
+                - "timeField"
+                type: "object"
+              validationAction:
+                enum:
+                - "error"
+                - "warn"
+                - null
+                nullable: true
+                type: "string"
+              validationLevel:
+                enum:
+                - "moderate"
+                - "off"
+                - "strict"
+                - null
+                nullable: true
+                type: "string"
+              validator:
+                additionalProperties: true
+                nullable: true
+                type: "object"
+            type: "object"
+          status:
+            nullable: true
+            properties:
+              conditions:
+                items:
+                  properties:
+                    lastTransitionTime:
+                      type: "string"
+                    message:
+                      type: "string"
+                    reason:
+                      type: "string"
+                    status:
+                      type: "string"
+                    type:
+                      type: "string"
+                  required:
+                  - "lastTransitionTime"
+                  - "message"
+                  - "reason"
+                  - "status"
+                  - "type"
+                  type: "object"
+                type: "array"
+              health:
+                properties:
+                  status:
+                    type: "string"
+                required:
+                - "status"
+                type: "object"
+              phase:
+                type: "string"
+            required:
+            - "conditions"
+            - "health"
+            - "phase"
+            type: "object"
+        required:
+        - "spec"
+        title: "MongoCollection"
+        type: "object"
+    served: true
+    storage: true
+    subresources:
+      status: {}

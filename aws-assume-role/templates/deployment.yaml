@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aws-assume-role-controller
+  namespace: {{ .Release.Namespace }}
+  {{- if .Values.annotations }}
+  annotations: {{ toYaml .Values.annotations | nindent 4 }}
+  {{- end }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      apps.kubernetes.io/name: aws-assume-role-controller
+  template:
+    metadata:
+      labels:
+        apps.kubernetes.io/name: aws-assume-role-controller
+      {{- if .Values.podAnnotations }}
+      annotations: {{ toYaml .Values.podAnnotations | nindent 8 }}
+      {{- end }}
+    spec:
+      containers:
+        - name: aws-assume-role-controller
+          image: "wdonne/aws-assume-role:{{ .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          resources: {{ toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.command }}
+          command: {{ toYaml .Values.command | nindent 12 }}
+          {{- end }}
+          {{- if .Values.args }}
+          args: {{ toYaml .Values.args | nindent 12 }}
+          {{- end }}
+          {{- if .Values.logLevel }}
+          env:
+            - name: RUST_LOG
+              value: {{ .Values.logLevel }}
+          {{- end }}
+          {{- if .Values.ports }}
+          ports: {{ toYaml .Values.ports | nindent 12 }}
+          {{- end }}
+          {{- if .Values.securityContext }}
+          securityContext: {{ toYaml .Values.securityContext | nindent 12 }}
+          {{- end }}
+      {{- if .Values.nodeSelector }}
+      nodeSelector: {{ toYaml .Values.nodeSelector | nindent 8 }}
+      {{- end }}
+      serviceAccountName: aws-assume-role-controller
