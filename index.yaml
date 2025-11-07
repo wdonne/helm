@@ -3,9 +3,9 @@ entries:
   aws-assume-role:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-11-07T11:45:07.261818+01:00"
+    created: "2025-11-07T12:01:41.841938+01:00"
     description: The AWS Assume Role Kubernetes operator
-    digest: e2e7d4ed1dca20de7a462557ec352e83c9f3720309e40c9bdf4fc0e1b334e05c
+    digest: f9d3c8f43957811c70e488a1582e7b2d609687c038a2168ff5a26dff552af4f9
     home: https://github.com/wdonne/aws-assume-role
     keywords:
     - aws
@@ -25,9 +25,9 @@ entries:
   mongo-collections:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-11-07T11:45:07.262043+01:00"
+    created: "2025-11-07T12:01:41.84278+01:00"
     description: The MongoDB Collections Operator
-    digest: e5e6a4e972cfc6b57563bf3bbb4405050ec15469c3c96d7ce0e0d213732c301b
+    digest: 1ea0ee10182d87d54fb57de625d3857eab4690a44f25c3a0fa22a1c6d570784a
     home: https://github.com/wdonne/mongo-collections
     keywords:
     - mongodb
@@ -42,4 +42,4 @@ entries:
     urls:
     - mongo-collections-1.0.0.tgz
     version: 1.0.0
-generated: "2025-11-07T11:45:07.26141+01:00"
+generated: "2025-11-07T12:01:41.841087+01:00"
