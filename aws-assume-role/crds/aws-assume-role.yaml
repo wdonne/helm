@@ -5,14 +5,25 @@ metadata:
 spec:
   group: pincette.net
   names:
-    categories: []
+    categories:
+    - controllers
     kind: AWSAssumeRole
     plural: awsassumeroles
-    shortNames: []
+    shortNames:
+    - aar
     singular: awsassumerole
   scope: Namespaced
   versions:
-  - additionalPrinterColumns: []
+  - additionalPrinterColumns:
+    - jsonPath: .status.health.status
+      name: Health
+      type: string
+    - jsonPath: .status.phase
+      name: Phase
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
     name: v1
     schema:
       openAPIV3Schema:
