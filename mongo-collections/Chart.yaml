@@ -12,4 +12,4 @@ maintainers:
 name: mongo-collections
 sources:
   - https://github.com/wdonne/mongo-collections
-version: 1.0.0
+version: 1.0.1

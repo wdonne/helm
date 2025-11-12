@@ -13,6 +13,9 @@ configFile: /conf/application
 # The image pull policy for the controller pod.
 imagePullPolicy: IfNotPresent
 
+# Optional secrets for pulling images.
+imagePullSecrets: [ ]
+
 # Can be any of debug, error, info, trace or warn.
 logLevel: info
 
