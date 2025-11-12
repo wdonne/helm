@@ -3,9 +3,30 @@ entries:
   aws-assume-role:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-11-07T12:01:41.841938+01:00"
+    created: "2025-11-12T10:23:14.361931+01:00"
     description: The AWS Assume Role Kubernetes operator
-    digest: f9d3c8f43957811c70e488a1582e7b2d609687c038a2168ff5a26dff552af4f9
+    digest: 607dd394cdf92841ac6473652263246181b940b47a4fe684ec84057c5012f50c
+    home: https://github.com/wdonne/aws-assume-role
+    keywords:
+    - aws
+    - role
+    - iam
+    - assume
+    maintainers:
+    - email: werner.donne@pincette.net
+      name: Werner Donné
+      url: https://github.com/wdonne
+    name: aws-assume-role
+    sources:
+    - https://github.com/wdonne/aws-assume-role
+    urls:
+    - aws-assume-role-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-11-12T10:23:14.361749+01:00"
+    description: The AWS Assume Role Kubernetes operator
+    digest: 791f4a5a661714681a60f316d40eae790584bf7bbbb137a8aa1347008d077fb8
     home: https://github.com/wdonne/aws-assume-role
     keywords:
     - aws
@@ -25,9 +46,28 @@ entries:
   mongo-collections:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-11-07T12:01:41.84278+01:00"
+    created: "2025-11-12T10:23:14.362342+01:00"
     description: The MongoDB Collections Operator
-    digest: 1ea0ee10182d87d54fb57de625d3857eab4690a44f25c3a0fa22a1c6d570784a
+    digest: 3a3388e334b9cb39f67468ed45bdc7f218dccbe75f9ce64df97963188a56d536
+    home: https://github.com/wdonne/mongo-collections
+    keywords:
+    - mongodb
+    - collection
+    maintainers:
+    - email: werner.donne@pincette.net
+      name: Werner Donné
+      url: https://github.com/wdonne
+    name: mongo-collections
+    sources:
+    - https://github.com/wdonne/mongo-collections
+    urls:
+    - mongo-collections-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-11-12T10:23:14.36214+01:00"
+    description: The MongoDB Collections Operator
+    digest: 7903fb05a4c8dfad290b410c3b6e4242567dadbdb8ced0a358ea9b64577303e9
     home: https://github.com/wdonne/mongo-collections
     keywords:
     - mongodb
@@ -42,4 +82,4 @@ entries:
     urls:
     - mongo-collections-1.0.0.tgz
     version: 1.0.0
-generated: "2025-11-07T12:01:41.841087+01:00"
+generated: "2025-11-12T10:23:14.361079+01:00"
