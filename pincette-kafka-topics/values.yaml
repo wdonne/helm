@@ -1,0 +1,53 @@
+# Annotations for the deployment.
+annotations: { }
+
+# The command arguments for the controller pod.
+args: [ ]
+
+# The command for the controller pod.
+command: [ ]
+
+# The image pull policy for the controller pod.
+imagePullPolicy: IfNotPresent
+
+# Optional secrets for pulling images.
+imagePullSecrets: [ ]
+
+# The ports for the controller pod.
+ports: [ ]
+
+# The node selector for the controller pod.
+nodeSelector: { }
+
+# Annotations for the pod.
+podAnnotations: { }
+
+# The resources for the controller pod.
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    memory: 256Mi
+
+# The security context for the controller pod.
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  seccompProfile:
+    type: RuntimeDefault
+  runAsNonRoot: true
+
+volumes:
+  - name: config
+    secret:
+      secretName: config
+
+volumeMounts:
+  - mountPath: /conf
+    name: config
+
+# The namespaces the controller should watch. By default, all namespaces are watched.
+watchNamespaces: []
