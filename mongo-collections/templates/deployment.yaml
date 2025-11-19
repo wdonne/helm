@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: mongo-collections-controller
-          image: "wdonne/mongo-collections:{{ .Chart.AppVersion }}"
+          image: "{{- if .Values.registry }}{{ .Values.registry }}/{{- end }}wdonne/mongo-collections:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           resources: {{ toYaml .Values.resources | nindent 12 }}
           {{- if .Values.command }}

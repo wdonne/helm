@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: aws-assume-role-controller
-          image: "wdonne/aws-assume-role:{{ .Chart.AppVersion }}"
+          image: "{{- if .Values.registry }}{{ .Values.registry }}/{{- end }}wdonne/aws-assume-role:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           resources: {{ toYaml .Values.resources | nindent 12 }}
           {{- if .Values.command }}
@@ -46,5 +46,8 @@ spec:
       {{- end }}
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets: {{ toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      {{- if .Values.tolerations }}
+      tolerations: {{ toYaml .Values.tolerations | nindent 8 }}
       {{- end }}
       serviceAccountName: aws-assume-role-controller

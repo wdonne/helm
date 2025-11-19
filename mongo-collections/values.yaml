@@ -28,6 +28,9 @@ podAnnotations: { }
 # The ports for the controller pod.
 ports: [ ]
 
+# The default container image registry.
+registry: docker.io
+
 # The resources for the controller pod.
 resources:
   requests:
@@ -46,6 +49,9 @@ securityContext:
     type: RuntimeDefault
   runAsNonRoot: true
   readOnlyRootFilesystem: true
+
+# Tolerations for the pod.
+tolerations: [ ]
 
 volumes:
   - name: config
