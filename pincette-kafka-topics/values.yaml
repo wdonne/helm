@@ -22,6 +22,9 @@ nodeSelector: { }
 # Annotations for the pod.
 podAnnotations: { }
 
+# The default container image registry.
+registry: docker.io
+
 # The resources for the controller pod.
 resources:
   requests:
@@ -39,6 +42,9 @@ securityContext:
   seccompProfile:
     type: RuntimeDefault
   runAsNonRoot: true
+
+# Tolerations for the pod.
+tolerations: [ ]
 
 volumes:
   - name: config

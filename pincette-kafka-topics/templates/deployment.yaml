@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: kafka-topics-controller
-          image: "wdonne/pincette-kafka-topics:{{ .Chart.AppVersion }}"
+          image: "{{- if .Values.registry }}{{ .Values.registry }}/{{- end }}wdonne/pincette-kafka-topics:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           resources: {{ toYaml .Values.resources | nindent 12 }}
           {{- if .Values.command }}
@@ -47,6 +47,9 @@ spec:
       {{- end }}
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets: {{ toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      {{- if .Values.tolerations }}
+      tolerations: {{ toYaml .Values.tolerations | nindent 8 }}
       {{- end }}
       serviceAccountName: kafka-topics-controller
       {{- if .Values.volumes }}
