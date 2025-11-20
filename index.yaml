@@ -3,7 +3,7 @@ entries:
   aws-assume-role:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-11-19T16:32:17.20581+01:00"
+    created: "2025-11-20T17:36:17.239136+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: c923de15a6bc293ec0f67fa839db7ded64c952226d462f594deaa291362b246d
     home: https://github.com/wdonne/aws-assume-role
@@ -24,7 +24,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-11-19T16:32:17.205623+01:00"
+    created: "2025-11-20T17:36:17.23895+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: d057f04636d61e3879006a269050eb7fa39cc799214b605689cac019c5bcd18a
     home: https://github.com/wdonne/aws-assume-role
@@ -45,7 +45,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-11-19T16:32:17.205206+01:00"
+    created: "2025-11-20T17:36:17.238762+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: c3c6637ae80d00eda70eef1ccb80fba3421928957b6d4f95a6abfc8795a1e9a2
     home: https://github.com/wdonne/aws-assume-role
@@ -67,9 +67,9 @@ entries:
   mongo-collections:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-11-19T16:32:17.206441+01:00"
+    created: "2025-11-20T17:36:17.239751+01:00"
     description: The MongoDB Collections Operator
-    digest: 87e6e81fc62471f206bb0b424b9c3d1da8c0ee14e46b1d9eadada33f3a6d6718
+    digest: 909cee8e1604256089e219a992a87bc8e24256f450d4b0bfc8a31280f0bcefea
     home: https://github.com/wdonne/mongo-collections
     keywords:
     - mongodb
@@ -86,7 +86,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-11-19T16:32:17.206235+01:00"
+    created: "2025-11-20T17:36:17.239543+01:00"
     description: The MongoDB Collections Operator
     digest: b39d23ebde3b0d0b2279d80c0ddbb29260c49572e7563b9e7a90c2e81dcc0d2c
     home: https://github.com/wdonne/mongo-collections
@@ -105,7 +105,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-11-19T16:32:17.206021+01:00"
+    created: "2025-11-20T17:36:17.239341+01:00"
     description: The MongoDB Collections Operator
     digest: dbf5cbcc616f40af01a8ec3d68a27dfdf3cd93db3ce7e0659cc68a850d15630a
     home: https://github.com/wdonne/mongo-collections
@@ -125,7 +125,26 @@ entries:
   pincette-kafka-topics:
   - apiVersion: v2
     appVersion: 1.1.1
-    created: "2025-11-19T16:32:17.206612+01:00"
+    created: "2025-11-20T17:36:17.240094+01:00"
+    description: The Kafka Topics Operator
+    digest: 67f47c11ea32a6a6d7b2f223ab7251764ba0ab1aa1b7e36520667438a912887e
+    home: https://github.com/wdonne/pincette-kafka-topics
+    keywords:
+    - kafka
+    - topic
+    maintainers:
+    - email: werner.donne@pincette.net
+      name: Werner Donné
+      url: https://github.com/wdonne
+    name: pincette-kafka-topics
+    sources:
+    - https://github.com/wdonne/pincette-kafka-topics
+    urls:
+    - pincette-kafka-topics-1.1.6.tgz
+    version: 1.1.6
+  - apiVersion: v2
+    appVersion: 1.1.1
+    created: "2025-11-20T17:36:17.239916+01:00"
     description: The Kafka Topics Operator
     digest: c8f641f48ac4b3d8aa2b90bc1d87acdc76f2f6a764c54b651b209ae70f15fbc7
     home: https://github.com/wdonne/pincette-kafka-topics
@@ -142,4 +161,4 @@ entries:
     urls:
     - pincette-kafka-topics-1.1.5.tgz
     version: 1.1.5
-generated: "2025-11-19T16:32:17.204311+01:00"
+generated: "2025-11-20T17:36:17.238021+01:00"
