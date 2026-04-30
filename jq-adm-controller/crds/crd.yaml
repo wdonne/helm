@@ -1,0 +1,173 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: validatingpolicies.pincette.net
+spec:
+  group: pincette.net
+  names:
+    categories:
+    - controllers
+    kind: ValidatingPolicy
+    plural: validatingpolicies
+    shortNames:
+    - vps
+    singular: validatingpolicy
+  scope: Cluster
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.health.status
+      name: Health
+      type: string
+    - jsonPath: .status.phase
+      name: Phase
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Auto-generated derived type for ValidatingPolicySpec via `CustomResource`
+        properties:
+          spec:
+            properties:
+              expression:
+                type: string
+            required:
+            - expression
+            type: object
+          status:
+            nullable: true
+            properties:
+              conditions:
+                items:
+                  properties:
+                    lastTransitionTime:
+                      type: string
+                    message:
+                      type: string
+                    reason:
+                      type: string
+                    status:
+                      type: string
+                    type:
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - message
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+              health:
+                properties:
+                  status:
+                    type: string
+                required:
+                - status
+                type: object
+              phase:
+                type: string
+            required:
+            - conditions
+            - health
+            - phase
+            type: object
+        required:
+        - spec
+        title: ValidatingPolicy
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: mutatingpolicies.pincette.net
+spec:
+  group: pincette.net
+  names:
+    categories:
+    - controllers
+    kind: MutatingPolicy
+    plural: mutatingpolicies
+    shortNames:
+    - mps
+    singular: mutatingpolicy
+  scope: Cluster
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.health.status
+      name: Health
+      type: string
+    - jsonPath: .status.phase
+      name: Phase
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Auto-generated derived type for MutatingPolicySpec via `CustomResource`
+        properties:
+          spec:
+            properties:
+              matchExpression:
+                type: string
+              transformExpression:
+                type: string
+            required:
+            - matchExpression
+            - transformExpression
+            type: object
+          status:
+            nullable: true
+            properties:
+              conditions:
+                items:
+                  properties:
+                    lastTransitionTime:
+                      type: string
+                    message:
+                      type: string
+                    reason:
+                      type: string
+                    status:
+                      type: string
+                    type:
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - message
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+              health:
+                properties:
+                  status:
+                    type: string
+                required:
+                - status
+                type: object
+              phase:
+                type: string
+            required:
+            - conditions
+            - health
+            - phase
+            type: object
+        required:
+        - spec
+        title: MutatingPolicy
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

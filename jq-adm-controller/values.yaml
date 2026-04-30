@@ -1,0 +1,125 @@
+# Additional namespace selector match expressions for the mutating webhook.
+additionalMutatingNamespaceSelectorMatchExpressions: [ ]
+
+# Additional object selector match expressions for the mutating webhook.
+additionalMutatingObjectSelectorMatchExpressions: [ ]
+
+# Additional rules that are appended to the mutatingRules field.
+additionalMutatingRules: []
+
+# Additional namespace selector match expressions for the validating webhook.
+additionalValidatingNamespaceSelectorMatchExpressions: [ ]
+
+# Additional object selector match expressions for the validating webhook.
+additionalValidatingObjectSelectorMatchExpressions: [ ]
+
+# Additional rules that are appended to the validatingRules field.
+additionalValidatingRules: []
+
+# Additional volumes such as config maps with jq functions.
+additionalVolumes: [ ]
+
+# Additional volume mounts that refer to the additional volumes.
+additionalVolumeMounts: [ ]
+
+# Annotations for the deployment.
+annotations: { }
+
+# Parameters for the cert-manager Certificate resource.
+cert:
+  ca:
+    name: selfsigned-ca
+    namespace: cert-manager
+  clusterIssuerName: pincette-selfsigned-issuer
+  organisation: pincette
+
+# The command arguments for the controller pod.
+args: [ ]
+
+# The command for the controller pod.
+command: [ ]
+
+# Deploys the mutating webhook when set.
+enableMutating: true
+
+# Deploys the validating webhook when set.
+enableValidating: true
+
+# The image pull policy for the controller pod.
+imagePullPolicy: IfNotPresent
+
+# Optional secrets for pulling images.
+imagePullSecrets: [ ]
+
+# Can be any of debug, error, info, trace or warn.
+logLevel: info
+
+# The failure policy for the mutating webhook.
+mutatingFailurePolicy: Fail
+
+# The rules for the mutating webhook.
+mutatingRules:
+  - apiGroups:
+      - ""
+    apiVersions:
+      - v1
+    operations:
+      - CREATE
+      - UPDATE
+    resources:
+      - pods
+    scope: "*"
+
+# The node selector for the controller pod.
+nodeSelector: { }
+
+# Annotations for the pod.
+podAnnotations: { }
+
+# The priority class for the controller. Set it to system-cluster-critital if you have security
+# related policies.
+priorityClassName: null
+
+# The default container image registry.
+registry: docker.io
+
+# The number of controller pods.
+replicas: 2
+
+# The resources for the controller pod.
+resources:
+  requests:
+    cpu: 10m
+    memory: 30Mi
+  limits:
+    memory: 30Mi
+
+# The security context for the controller pod.
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  seccompProfile:
+    type: RuntimeDefault
+  runAsNonRoot: true
+  readOnlyRootFilesystem: true
+
+# Tolerations for the pod.
+tolerations: [ ]
+
+# The failure policy for the validating webhook.
+validatingFailurePolicy: Fail
+
+# The rules for the validating webhook.
+validatingRules:
+  - apiGroups:
+      - ""
+    apiVersions:
+      - v1
+    operations:
+      - CREATE
+      - UPDATE
+    resources:
+      - pods
+    scope: "*"

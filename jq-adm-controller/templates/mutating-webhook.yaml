@@ -1,0 +1,46 @@
+{{- if .Values.enableMutating }}
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: {{ .Chart.Name }}.pincette.net
+  {{- if and .Values.cert.ca.namespace .Values.cert.ca.name }}
+  annotations:
+    cert-manager.io/inject-ca-from-secret: {{ .Values.cert.ca.namespace }}/{{ .Values.cert.ca.name }}
+  {{- end }}
+webhooks:
+  - name: {{ .Chart.Name }}.pincette.net
+    namespaceSelector:
+      matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values:
+            - kube-system
+        {{- if .Values.additionalMutatingNamespaceSelectorMatchExpressions }}
+        {{ toYaml .Values.additionalMutatingNamespaceSelectorMatchExpressions | nindent 8 }}
+        {{- end }}
+    objectSelector:
+      matchExpressions:
+        - key: app.kubernetes.io/name
+          operator: NotIn
+          values:
+            - {{ .Chart.Name }}
+        {{- if .Values.additionalMutatingObjectSelectorMatchExpressions }}
+        {{ toYaml .Values.additionalMutatingObjectSelectorMatchExpressions | nindent 8 }}
+        {{- end }}
+    rules: {{ toYaml .Values.mutatingRules | nindent 6 }}
+    {{- if .Values.additionalMutatingRules }}
+    {{ toYaml .Values.additionalMutatingRules | nindent 6 }}
+    {{- end }}
+    clientConfig:
+      service:
+        namespace: {{ .Chart.Name }}
+        name: {{ .Chart.Name }}
+        path: /mutate
+    admissionReviewVersions:
+      - v1
+    {{- if .Values.mutatingFailurePolicy }}
+    failurePolicy: {{ .Values.mutatingFailurePolicy }}
+    {{- end }}
+    sideEffects: None
+    timeoutSeconds: 5
+  {{- end }}
