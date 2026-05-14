@@ -1,0 +1,16 @@
+apiVersion: v2
+appVersion: 1.0.0
+description: The Kafka Topics Operator
+home: https://github.com/wdonne/kafka-topics
+keywords:
+  - kafka
+  - topics
+  - operator
+maintainers:
+  - name: Werner Donné
+    email: werner.donne@pincette.net
+    url: https://github.com/wdonne
+name: kafka-topics
+sources:
+  - https://github.com/wdonne/kafka-topics
+version: 1.0.0

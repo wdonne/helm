@@ -1,0 +1,66 @@
+# Annotations for the deployment.
+annotations: { }
+
+# The command arguments for the controller pod.
+args: [ ]
+
+# The command for the controller pod.
+command: [ ]
+
+# A configuration file, as described in https://docs.rs/config/latest/config/.
+configFile: /conf/application
+
+# The image pull policy for the controller pod.
+imagePullPolicy: IfNotPresent
+
+# Optional secrets for pulling images.
+imagePullSecrets: [ ]
+
+# Can be any of debug, error, info, trace or warn.
+logLevel: info
+
+# The node selector for the controller pod.
+nodeSelector: { }
+
+# Annotations for the pod.
+podAnnotations: { }
+
+# The ports for the controller pod.
+ports: [ ]
+
+# The default container image registry.
+registry: docker.io
+
+# The resources for the controller pod.
+resources:
+  requests:
+    cpu: 10m
+    memory: 10Mi
+  limits:
+    memory: 10Mi
+
+# The security context for the controller pod.
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  seccompProfile:
+    type: RuntimeDefault
+  runAsNonRoot: true
+  readOnlyRootFilesystem: true
+
+# Tolerations for the pod.
+tolerations: [ ]
+
+volumes:
+  - name: config
+    configMap:
+      name: config
+
+volumeMounts:
+  - mountPath: /conf
+    name: config
+
+# The namespaces the controller should watch. By default, all namespaces are watched.
+watchNamespaces: [ ]
