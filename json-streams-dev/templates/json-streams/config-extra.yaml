@@ -1,0 +1,9 @@
+{{- if .Values.jsonstreams.extraConfig }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: extra
+  namespace: {{ include "prefix" . }}json-streams
+data:
+  extra.conf: {{ toYaml .Values.jsonstreams.extraConfig | indent 4 }}
+{{- end -}}

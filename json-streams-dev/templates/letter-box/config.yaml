@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: letter-box
+  namespace: {{ include "prefix" . }}letter-box
+data:
+  application.conf: |
+    {{- if .Values.letterbox.extraConfig }}
+    include "/conf/extra.conf"
+    {{- end }}
+
+    domains = ["localhost"]
+    logLevel = "INFO"
+    topic = "letter-box"
+
+    kafka {
+      bootstrap.servers = "kafka.{{ include "prefix" . }}kafka:9092"
+      client.id = "letter-box"
+    }

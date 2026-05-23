@@ -1,0 +1,9 @@
+{{- if .Values.letterbox.extraConfig }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: extra
+  namespace: {{ include "prefix" . }}letter-box
+data:
+  extra.conf: {{ toYaml .Values.letterbox.extraConfig | indent 4 }}
+{{- end -}}

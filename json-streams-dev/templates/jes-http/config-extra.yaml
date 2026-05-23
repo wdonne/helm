@@ -1,0 +1,9 @@
+{{- if .Values.jeshttp.extraConfig }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: extra
+  namespace: {{ include "prefix" . }}jes-http
+data:
+  extra.conf: {{ toYaml .Values.jeshttp.extraConfig | indent 4 }}
+{{- end -}}

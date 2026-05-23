@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: letter-box
+  namespace: {{ include "prefix" . }}letter-box
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: letter-box
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: letter-box
+    spec:
+      containers:
+        - name: letter-box
+          image: "wdonne/pincette-letter-box:{{ .Values.letterbox.version }}"
+          imagePullPolicy: IfNotPresent
+          command:
+            - java
+          args:
+            - -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000
+            - -Dconfig.file=/conf/application.conf
+            - -cp
+            - "@/app/jib-classpath-file"
+            - net.pincette.letterbox.Application
+            - "9000"
+          ports:
+            - name: http
+              containerPort: 9000
+          volumeMounts:
+            - name: config
+              mountPath: /conf/application.conf
+              subPath: application.conf
+          {{- if .Values.letterbox.extraConfig }}
+            - name: extra
+              mountPath: /conf/extra.conf
+              subPath: extra.conf
+          {{- end }}
+      serviceAccountName: letter-box
+      volumes:
+        - name: config
+          configMap:
+            name: letter-box
+      {{- if .Values.letterbox.extraConfig }}
+        - name: extra
+          configMap:
+            name: extra
+      {{- end }}

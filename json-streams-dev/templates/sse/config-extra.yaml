@@ -1,0 +1,9 @@
+{{- if .Values.sse.extraConfig }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: extra
+  namespace: {{ include "prefix" . }}sse
+data:
+  extra.conf: {{ toYaml .Values.sse.extraConfig | indent 4 }}
+{{- end -}}

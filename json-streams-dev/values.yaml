@@ -1,0 +1,43 @@
+# When this is set, every namespace is prefixed with the value and a dash. This way, you can
+# deploy several environments in the same cluster.
+namespacePrefix: ""
+
+jeshttp:
+  version: 3.3.1
+  # Extra configuration entries that will be included in the main configuration.
+  extraConfig: |
+    logLevel = FINEST
+
+jsonstreams:
+  version: 2.9.0
+  # Extra configuration entries that will be included in the main configuration.
+  extraConfig: ""
+  plugin:
+    # If the image is set, it will be loaded as a volume.
+    image: ""
+    imagePullPolicy: Always
+    # This should correspond to the "plugins" configuration entry.
+    # See also https://jsonstreams.io/docs/plugins.html.
+    mountPath: ""
+    subPath: ""
+
+kafka:
+  storage: 5Gi
+  version: 4.2.0
+
+letterbox:
+  version: 1.3.8
+  # Extra configuration entries that will be included in the main configuration.
+  extraConfig: |
+    logLevel = FINEST
+
+mongo:
+  storage: 10Gi
+  version: 8.0.23
+
+sse:
+  version: 1.5.7
+  # Extra configuration entries that will be included in the main configuration.
+  extraConfig: |
+    logLevel = "FINEST"
+    topic = "plusminus-counter-reply"

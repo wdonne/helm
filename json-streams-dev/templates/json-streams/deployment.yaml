@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: json-streams
+  namespace: {{ include "prefix" . }}json-streams
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: json-streams
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: json-streams
+    spec:
+      containers:
+        - name: json-streams
+          image: "jsoneventsourcing/pincette-json-streams:{{ .Values.jsonstreams.version }}"
+          imagePullPolicy: IfNotPresent
+          command:
+            - java
+          args:
+            - -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000
+            - -Dconfig.file=/conf/application.conf
+            - --add-modules
+            - java.scripting
+            - --module-path
+            - app:app/libs
+            - --module
+            - application/net.pincette.json.streams.Application
+            - run
+          volumeMounts:
+            - name: config
+              mountPath: /conf/application.conf
+              subPath: application.conf
+          {{- if .Values.jsonstreams.extraConfig }}
+            - name: extra
+              mountPath: /conf/extra.conf
+              subPath: extra.conf
+          {{- end }}
+          {{- if .Values.jsonstreams.plugin.mountPath }}
+            - name: plugin
+              mountPath: {{ .Values.jsonstreams.plugin.mountPath }}
+              {{- if .Values.jsonstreams.plugin.subPath }}
+              subPath: {{ .Values.jsonstreams.plugin.subPath }}
+              {{- end }}
+          {{- end }}
+      serviceAccountName: json-streams
+      volumes:
+        - name: config
+          configMap:
+            name: json-streams
+      {{- if .Values.jsonstreams.extraConfig }}
+        - name: extra
+          configMap:
+            name: extra
+      {{- end }}
+      {{- if .Values.jsonstreams.plugin.image }}
+        - name: plugin
+          image:
+            reference: {{ .Values.jsonstreams.plugin.image }}
+      {{- end }}

@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: json-streams
+  namespace: {{ include "prefix" . }}json-streams
+data:
+  application.conf: |
+    logLevel = "INFO"
+    log.net.pincette.json.streams = "INFO"
+
+    log.net.pincette.json.streams {
+      build = "WARNING"
+      config = "WARNING"
+      keepalive = "WARNING"
+      leader = "INFO"
+      work = "FINEST"
+    }
+
+    {{- if .Values.jsonstreams.extraConfig }}
+    include "/conf/extra.conf"
+    {{- end }}
+
+    kafka {
+      bootstrap.servers = "kafka.{{ include "prefix" . }}kafka:9092"
+      client.id = "json-streams"
+    }
+
+    mongodb {
+      database = "local"
+      collection = "json-streams"
+      uri = "mongodb://mongo.{{ include "prefix" . }}mongo:27017"
+    }

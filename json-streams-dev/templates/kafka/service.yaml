@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka
+  namespace: {{ include "prefix" . }}kafka
+spec:
+  selector:
+    app.kubernetes.io/name: kafka
+  ports:
+    - port: 9092
+      name: broker
+      targetPort: broker
+      protocol: TCP
+    - port: 9093
+      name: controller
+      targetPort: controller
+      protocol: TCP
