@@ -12,4 +12,4 @@ maintainers:
 name: jq-adm-controller
 sources:
   - https://github.com/wdonne/jq-adm-controller
-version: 1.0.0
+version: 1.0.1
