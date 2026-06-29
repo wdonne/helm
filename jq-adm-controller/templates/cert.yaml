@@ -5,8 +5,8 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   secretName: cert
-  duration: 72h
-  renewBefore: 24h
+  duration: {{ .Values.cert.duration }}
+  renewBefore: {{ .Values.cert.renewBefore }}
   {{- if .Values.cert.organisation }}
   subject:
     organizations:

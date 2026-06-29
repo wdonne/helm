@@ -31,7 +31,11 @@ cert:
     name: selfsigned-ca
     namespace: cert-manager
   clusterIssuerName: pincette-selfsigned-issuer
+  # This should be longer that the cluster can be offline. Otherwise, you can have a dead-lock if
+  # cert-manager is mutated by the admission controller.
+  duration: 168h
   organisation: pincette
+  renewBefore: 24h
 
 # The command arguments for the controller pod.
 args: [ ]
