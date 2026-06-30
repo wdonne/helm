@@ -35,9 +35,9 @@ registry: docker.io
 resources:
   requests:
     cpu: 10m
-    memory: 5Mi
+    memory: 10Mi
   limits:
-    memory: 5Mi
+    memory: 10Mi
 
 # The security context for the controller pod.
 securityContext:
