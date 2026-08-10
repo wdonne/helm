@@ -10,11 +10,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      apps.kubernetes.io/name: aws-assume-role-controller
+      app.kubernetes.io/name: aws-assume-role-controller
   template:
     metadata:
       labels:
-        apps.kubernetes.io/name: aws-assume-role-controller
+        app.kubernetes.io/name: aws-assume-role-controller
       {{- if .Values.podAnnotations }}
       annotations: {{ toYaml .Values.podAnnotations | nindent 8 }}
       {{- end }}
