@@ -1,0 +1,16 @@
+apiVersion: v2
+appVersion: 1.0.0
+description: The Mongo JWT Claims service
+home: https://github.com/wdonne/mongo-jwt-claims
+keywords:
+  - claims
+  - jwt
+  - mongodb
+maintainers:
+  - name: Werner Donné
+    email: werner.donne@pincette.net
+    url: https://github.com/wdonne
+name: mongo-jwt-claims
+sources:
+  - https://github.com/wdonne/mongo-jwt-claims
+version: 1.0.0

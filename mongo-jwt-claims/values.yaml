@@ -1,0 +1,71 @@
+# Annotations for the deployment.
+annotations: { }
+
+# The command arguments for the pod.
+args: [ ]
+
+# The command for the pod.
+command: [ ]
+
+# The image pull policy for the pod.
+imagePullPolicy: IfNotPresent
+
+# Optional secrets for pulling images.
+imagePullSecrets: [ ]
+
+# The node selector for the pod.
+nodeSelector: { }
+
+# Annotations for the pod.
+podAnnotations: { }
+
+# The port for the pod.
+port: 8080
+
+# The default container image registry.
+registry: docker.io
+
+# The resources for the pod.
+resources:
+  requests:
+    cpu: 10m
+    memory: 10Mi
+  limits:
+    memory: 10Mi
+
+# The security context for the pod.
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  seccompProfile:
+    type: RuntimeDefault
+  runAsNonRoot: true
+  readOnlyRootFilesystem: true
+
+# Tolerations for the pod.
+tolerations: [ ]
+
+volumes:
+  - name: config
+    configMap:
+      name: config
+  - name: jwks
+    configMap:
+      name: internal
+  - name: key
+    secret:
+      secretName: internal
+
+volumeMounts:
+  - mountPath: /conf
+    name: config
+    readOnly: true
+  - mountPath: /jwks
+    name: jwks
+    readOnly: true
+  - mountPath: /key
+    name: key
+    readOnly: true
+
