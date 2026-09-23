@@ -26,7 +26,7 @@ port: 8080
 registry: docker.io
 
 # The number of pods for the deployment.
-replicas: 1
+#replicas: 1
 
 # The resources for the pod.
 resources:
