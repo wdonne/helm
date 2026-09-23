@@ -13,4 +13,4 @@ maintainers:
 name: mongo-jwt-claims
 sources:
   - https://github.com/wdonne/mongo-jwt-claims
-version: 1.0.1
+version: 1.0.2
