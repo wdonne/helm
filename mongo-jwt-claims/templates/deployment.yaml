@@ -6,6 +6,8 @@ metadata:
   {{- if .Values.annotations }}
   annotations: {{ toYaml .Values.annotations | nindent 4 }}
   {{- end }}
+  labels:
+    fullname: {{ .Release.Namespace }}-{{ .Release.Name }}
 spec:
   {{- if .Values.replicas }}
   replicas: {{ .Values.replicas }}
@@ -43,6 +45,13 @@ spec:
           {{- if .Values.volumeMounts }}
           volumeMounts: {{ toYaml .Values.volumeMounts | nindent 12 }}
           {{- end }}
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              fullname: {{ .Release.Namespace }}-{{ .Release.Name }}
       {{- if .Values.nodeSelector }}
       nodeSelector: {{ toYaml .Values.nodeSelector | nindent 8 }}
       {{- end }}
