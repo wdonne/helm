@@ -93,7 +93,7 @@ replicas: 2
 # The resources for the controller pod.
 resources:
   requests:
-    cpu: 10m
+    cpu: 50m
     memory: 30Mi
   limits:
     memory: 30Mi
