@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: mongo
-          image: "mongodb/mongodb-community-server:{{ .Values.mongo.version }}-ubi9-slim"
+          image: "mongodb/mongodb-community-server:{{ .Values.mongo.version }}-ubi8-slim"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 27017
