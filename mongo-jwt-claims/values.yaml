@@ -4,6 +4,9 @@ annotations: { }
 # The command arguments for the pod.
 args: [ ]
 
+# If this folder is set, a TLS listener will be created.
+#certFolder: /cert
+
 # The command for the pod.
 command: [ ]
 
@@ -24,9 +27,6 @@ port: 8080
 
 # The default container image registry.
 registry: docker.io
-
-# The number of pods for the deployment.
-#replicas: 1
 
 # The resources for the pod.
 resources:
@@ -71,4 +71,3 @@ volumeMounts:
   - mountPath: /key
     name: key
     readOnly: true
-

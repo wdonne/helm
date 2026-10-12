@@ -6,12 +6,8 @@ metadata:
   {{- if .Values.annotations }}
   annotations: {{ toYaml .Values.annotations | nindent 4 }}
   {{- end }}
-  labels:
-    fullname: {{ .Release.Namespace }}-{{ .Chart.Name }}
 spec:
-  {{- if .Values.replicas }}
-  replicas: {{ .Values.replicas }}
-  {{- end }}
+  replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ .Chart.Name }}
@@ -44,14 +40,12 @@ spec:
           {{- end }}
           {{- if .Values.volumeMounts }}
           volumeMounts: {{ toYaml .Values.volumeMounts | nindent 12 }}
+            {{- if .Values.certFolder }}
+            - mountPath: {{ .Values.certFolder }}
+              name: cert
+              readOnly: true
+            {{- end }}
           {{- end }}
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: kubernetes.io/hostname
-          whenUnsatisfiable: ScheduleAnyway
-          labelSelector:
-            matchLabels:
-              fullname: {{ .Release.Namespace }}-{{ .Chart.Name }}
       {{- if .Values.nodeSelector }}
       nodeSelector: {{ toYaml .Values.nodeSelector | nindent 8 }}
       {{- end }}
@@ -64,4 +58,9 @@ spec:
       serviceAccountName: {{ .Chart.Name }}
       {{- if .Values.volumes }}
       volumes: {{ toYaml .Values.volumes | nindent 8 }}
+        {{- if .Values.certFolder }}
+        - name: cert
+          secret:
+            secretName: cert
+        {{- end }}
       {{- end }}
