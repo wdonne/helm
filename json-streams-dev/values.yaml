@@ -3,13 +3,13 @@
 namespacePrefix: ""
 
 jeshttp:
-  version: 3.3.6
+  version: 3.3.8
   # Extra configuration entries that will be included in the main configuration.
   extraConfig: |
     logLevel = FINEST
 
 jsonstreams:
-  version: 2.9.5
+  version: 2.9.6
   # Extra configuration entries that will be included in the main configuration.
   extraConfig: ""
   plugin:
@@ -23,20 +23,20 @@ jsonstreams:
 
 kafka:
   storage: 5Gi
-  version: 4.3.1
+  version: 4.4.0
 
 letterbox:
-  version: 1.3.13
+  version: 1.3.14
   # Extra configuration entries that will be included in the main configuration.
   extraConfig: |
     logLevel = FINEST
 
 mongo:
   storage: 10Gi
-  version: 9.0.2
+  version: 9.0.4
 
 sse:
-  version: 1.5.12
+  version: 1.5.13
   # Extra configuration entries that will be included in the main configuration.
   extraConfig: |
     logLevel = "FINEST"
