@@ -1,0 +1,16 @@
+apiVersion: v2
+appVersion: 1.0.0
+description: The flat API for JSON Streams
+home: https://github.com/wdonne/json-streams-flat
+keywords:
+  - api
+  - json-streams
+  - mongodb
+maintainers:
+  - email: werner.donne@pincette.net
+    name: Werner Donné
+    url: https://github.com/wdonne
+name: json-streams-flat
+sources:
+  - https://github.com/wdonne/json-streams-flat
+version: 1.0.0
