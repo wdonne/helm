@@ -1,3 +1,9 @@
+# These are appended to the volumes field.
+additionalVolumes: [ ]
+
+# These are appended to the volumeMounts field.
+additionalVolumeMounts: [ ]
+
 # Annotations for the deployment.
 annotations: { }
 
