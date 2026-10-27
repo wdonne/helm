@@ -22,6 +22,9 @@ imagePullPolicy: IfNotPresent
 # Optional secrets for pulling images.
 imagePullSecrets: [ ]
 
+# If you set this an HPA is generated.
+#maxReplicas: 10
+
 # The node selector for the pod.
 nodeSelector: { }
 
@@ -35,7 +38,7 @@ port: 8080
 registry: docker.io
 
 # The number of replicas for the deployment. Leave it unset when you have an HPA.
-#replicas: 1
+#replicas: 2
 
 # The resources for the pod.
 resources:
