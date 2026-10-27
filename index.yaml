@@ -3,7 +3,7 @@ entries:
   aws-assume-role:
   - apiVersion: v2
     appVersion: 1.0.7
-    created: "2026-10-26T12:01:56.33205+01:00"
+    created: "2026-10-27T10:32:37.461328+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: 4b7d0750973a118b1dfe9a8d8634f8813b9edab62821a772ea39cf8bd0f6c734
     home: https://github.com/wdonne/aws-assume-role
@@ -24,7 +24,7 @@ entries:
     version: 1.0.9
   - apiVersion: v2
     appVersion: 1.0.6
-    created: "2026-10-26T12:01:56.331743+01:00"
+    created: "2026-10-27T10:32:37.461165+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: d6cbfd6f0dfed3ce57edb97ca521c242e408ea1672bc4644859f918484777695
     home: https://github.com/wdonne/aws-assume-role
@@ -45,7 +45,7 @@ entries:
     version: 1.0.8
   - apiVersion: v2
     appVersion: 1.0.5
-    created: "2026-10-26T12:01:56.331522+01:00"
+    created: "2026-10-27T10:32:37.460973+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: cb386e24ff6376cabb298a0c074d7af835003aea77b3dc9d23157f39dd859a2c
     home: https://github.com/wdonne/aws-assume-role
@@ -66,7 +66,7 @@ entries:
     version: 1.0.7
   - apiVersion: v2
     appVersion: 1.0.4
-    created: "2026-10-26T12:01:56.331272+01:00"
+    created: "2026-10-27T10:32:37.460764+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: a5ac4b4037fba26519b3780d2a6e25f363a5bde8162272d918eb2b69e55dd508
     home: https://github.com/wdonne/aws-assume-role
@@ -87,7 +87,7 @@ entries:
     version: 1.0.6
   - apiVersion: v2
     appVersion: 1.0.3
-    created: "2026-10-26T12:01:56.330937+01:00"
+    created: "2026-10-27T10:32:37.460592+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: 95d56b3d242bd736bb6424a330da3f35cfbaf8c51c3ca6db41f58271ee6a2802
     home: https://github.com/wdonne/aws-assume-role
@@ -108,7 +108,7 @@ entries:
     version: 1.0.5
   - apiVersion: v2
     appVersion: 1.0.2
-    created: "2026-10-26T12:01:56.330234+01:00"
+    created: "2026-10-27T10:32:37.460412+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: c00301826d3b120afabf3e39b0094cc0fa1e86fb6d9a7936fde51ce2f2e1e1a7
     home: https://github.com/wdonne/aws-assume-role
@@ -129,7 +129,7 @@ entries:
     version: 1.0.4
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-10-26T12:01:56.32988+01:00"
+    created: "2026-10-27T10:32:37.460237+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: 8b6cc6086e0afcddd167c7b759968c36645803232ee34cbf516d51f95ec8926b
     home: https://github.com/wdonne/aws-assume-role
@@ -150,7 +150,7 @@ entries:
     version: 1.0.3
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.329337+01:00"
+    created: "2026-10-27T10:32:37.460054+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: 962a7c3b53bc350f26f68e5ea69eb64d7503eba786c9800551eb7390724171bf
     home: https://github.com/wdonne/aws-assume-role
@@ -171,7 +171,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.329117+01:00"
+    created: "2026-10-27T10:32:37.459872+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: 2f102d1f7b4ab20dc1a20fa61c2f3695500308d288b4687b522fb1968bbca358
     home: https://github.com/wdonne/aws-assume-role
@@ -192,7 +192,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.328866+01:00"
+    created: "2026-10-27T10:32:37.459649+01:00"
     description: The AWS Assume Role Kubernetes operator
     digest: 38fe74438212ab2edbb85fc1fe48939cc6921dd8b72915cd80abab4c9ce2dacd
     home: https://github.com/wdonne/aws-assume-role
@@ -214,7 +214,7 @@ entries:
   jq-adm-controller:
   - apiVersion: v2
     appVersion: 1.0.3
-    created: "2026-10-26T12:01:56.334241+01:00"
+    created: "2026-10-27T10:32:37.463973+01:00"
     description: The jq admission controller
     digest: 498a91f7805fa29a21612929c069fbdf65a7ebf444b2a6217f4278ba0515507b
     home: https://github.com/wdonne/jq-adm-controller
@@ -233,7 +233,7 @@ entries:
     version: 1.0.6
   - apiVersion: v2
     appVersion: 1.0.3
-    created: "2026-10-26T12:01:56.333958+01:00"
+    created: "2026-10-27T10:32:37.463691+01:00"
     description: The jq admission controller
     digest: 4563a04fceee5415be330e14e68cc38d3474a5e560c725221c8f58be9befb34d
     home: https://github.com/wdonne/jq-adm-controller
@@ -252,7 +252,7 @@ entries:
     version: 1.0.5
   - apiVersion: v2
     appVersion: 1.0.2
-    created: "2026-10-26T12:01:56.333664+01:00"
+    created: "2026-10-27T10:32:37.463408+01:00"
     description: The jq admission controller
     digest: a29c66c37ce3ddf6484e44ff8cb8c70cfdc5f101bcf78c119c4db82824e7356d
     home: https://github.com/wdonne/jq-adm-controller
@@ -271,7 +271,7 @@ entries:
     version: 1.0.4
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-10-26T12:01:56.333354+01:00"
+    created: "2026-10-27T10:32:37.46311+01:00"
     description: The jq admission controller
     digest: 78e9125cf7e901b20b9dbc70365a1ede50d3ddb17ba9fa6adb4b81001ed9326f
     home: https://github.com/wdonne/jq-adm-controller
@@ -290,7 +290,7 @@ entries:
     version: 1.0.3
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.333058+01:00"
+    created: "2026-10-27T10:32:37.462793+01:00"
     description: The jq admission controller
     digest: 8f208352f3e17abf59f0c9b13d6ed26b05dbc5ff05d59991a5da965d677a52c6
     home: https://github.com/wdonne/jq-adm-controller
@@ -309,7 +309,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.332751+01:00"
+    created: "2026-10-27T10:32:37.462217+01:00"
     description: The jq admission controller
     digest: 4897171379fdb355e01177b7c640076aa13caa7a6e6c2e17c8ddffd5f101c9bd
     home: https://github.com/wdonne/jq-adm-controller
@@ -328,7 +328,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.332441+01:00"
+    created: "2026-10-27T10:32:37.46162+01:00"
     description: The jq admission controller
     digest: 110d54880482fa455c131361e754e9653ce13126f3f17f48be2de7f0ce47dfd6
     home: https://github.com/wdonne/jq-adm-controller
@@ -347,7 +347,7 @@ entries:
     version: 1.0.0
   json-streams-dev:
   - apiVersion: v2
-    created: "2026-10-26T12:01:56.337029+01:00"
+    created: "2026-10-27T10:32:37.465657+01:00"
     description: A local development environment for JSON Streams
     digest: 116f1831728986a0a5c01a75fd16ff3d420aafa9c82f0cd528b33155920d2c24
     home: https://github.com/wdonne/json-streams-dev
@@ -365,7 +365,7 @@ entries:
     - json-streams-dev-1.0.5.tgz
     version: 1.0.5
   - apiVersion: v2
-    created: "2026-10-26T12:01:56.336266+01:00"
+    created: "2026-10-27T10:32:37.465366+01:00"
     description: A local development environment for JSON Streams
     digest: ff0d81a26eab1fa15b305df4243b05828b1faefb9104b35096d5cc86767cba0c
     home: https://github.com/wdonne/json-streams-dev
@@ -383,7 +383,7 @@ entries:
     - json-streams-dev-1.0.4.tgz
     version: 1.0.4
   - apiVersion: v2
-    created: "2026-10-26T12:01:56.335767+01:00"
+    created: "2026-10-27T10:32:37.465088+01:00"
     description: A local development environment for JSON Streams
     digest: 5c9068849ecef97e79bd40d6cfe43edec0dca309a7c4b99a79ba66b820fbec66
     home: https://github.com/wdonne/json-streams-dev
@@ -401,7 +401,7 @@ entries:
     - json-streams-dev-1.0.3.tgz
     version: 1.0.3
   - apiVersion: v2
-    created: "2026-10-26T12:01:56.33517+01:00"
+    created: "2026-10-27T10:32:37.464808+01:00"
     description: A local development environment for JSON Streams
     digest: 9f9455452ad318e752f36ca416decb31629fc7ae3b4e538b5c3e9f94bd07faf0
     home: https://github.com/wdonne/json-streams-dev
@@ -419,7 +419,7 @@ entries:
     - json-streams-dev-1.0.2.tgz
     version: 1.0.2
   - apiVersion: v2
-    created: "2026-10-26T12:01:56.334836+01:00"
+    created: "2026-10-27T10:32:37.464535+01:00"
     description: A local development environment for JSON Streams
     digest: 21455c80e6626502a18cb55edfb14b35e084ad41a87b0a1aff83684b148baf78
     home: https://github.com/wdonne/json-streams-dev
@@ -437,7 +437,7 @@ entries:
     - json-streams-dev-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v2
-    created: "2026-10-26T12:01:56.334549+01:00"
+    created: "2026-10-27T10:32:37.46426+01:00"
     description: A local development environment for JSON Streams
     digest: c016ea0e071c10f024bd73716ccbd97781182bd87b6725b7bf8290124169e31e
     home: https://github.com/wdonne/json-streams-dev
@@ -457,9 +457,9 @@ entries:
   json-streams-flat:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.337341+01:00"
+    created: "2026-10-27T10:32:37.465857+01:00"
     description: The flat API for JSON Streams
-    digest: 4f9f34c04d6b8a2e679133e435b81167df8395af70c6f849ee096cdeb7f1b7c7
+    digest: 47acb6ac8ea7c7c16b71d8683b1b95dd5cc0945f2ad215fb5a06c65215187908
     home: https://github.com/wdonne/json-streams-flat
     keywords:
     - api
@@ -478,7 +478,7 @@ entries:
   kafka-topics:
   - apiVersion: v2
     appVersion: 1.0.2
-    created: "2026-10-26T12:01:56.338035+01:00"
+    created: "2026-10-27T10:32:37.466495+01:00"
     description: The Kafka Topics Operator
     digest: 4028ad47b2c64dc1751b803ab2e674021d8b902f73d6957011d04ebff7b51fe3
     home: https://github.com/wdonne/kafka-topics
@@ -498,7 +498,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-10-26T12:01:56.337817+01:00"
+    created: "2026-10-27T10:32:37.466294+01:00"
     description: The Kafka Topics Operator
     digest: 75f2309a6e032f181f4930ee9e0f48c13360cc6cec9c2996ae1004e012732ebe
     home: https://github.com/wdonne/kafka-topics
@@ -518,7 +518,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.337576+01:00"
+    created: "2026-10-27T10:32:37.466092+01:00"
     description: The Kafka Topics Operator
     digest: cf89a93954c4409b52666542cb69879806654bd6729b9813d56414248f9bd4d1
     home: https://github.com/wdonne/kafka-topics
@@ -539,7 +539,7 @@ entries:
   mongo-collections:
   - apiVersion: v2
     appVersion: 1.0.6
-    created: "2026-10-26T12:01:56.340242+01:00"
+    created: "2026-10-27T10:32:37.469099+01:00"
     description: The MongoDB Collections Operator
     digest: f7663b9789765fb02026e24db2f5f05936dfabf3932e4ada58fd74b3d44d0742
     home: https://github.com/wdonne/mongo-collections
@@ -558,7 +558,7 @@ entries:
     version: 1.0.9
   - apiVersion: v2
     appVersion: 1.0.5
-    created: "2026-10-26T12:01:56.340029+01:00"
+    created: "2026-10-27T10:32:37.468896+01:00"
     description: The MongoDB Collections Operator
     digest: 3b65e1699556dad002c5d762167fbb9afa85f828fc7aaeafe77c01af48a91991
     home: https://github.com/wdonne/mongo-collections
@@ -577,7 +577,7 @@ entries:
     version: 1.0.8
   - apiVersion: v2
     appVersion: 1.0.4
-    created: "2026-10-26T12:01:56.339804+01:00"
+    created: "2026-10-27T10:32:37.468695+01:00"
     description: The MongoDB Collections Operator
     digest: 8c8a1a610857fb57d3eab126db263a29fb18a137c926f8676c977390777cef3d
     home: https://github.com/wdonne/mongo-collections
@@ -596,7 +596,7 @@ entries:
     version: 1.0.7
   - apiVersion: v2
     appVersion: 1.0.3
-    created: "2026-10-26T12:01:56.339583+01:00"
+    created: "2026-10-27T10:32:37.468497+01:00"
     description: The MongoDB Collections Operator
     digest: d09fab74680832ef910cc51651faf6e0d58aa7c3423e14da7ecf808215835f5d
     home: https://github.com/wdonne/mongo-collections
@@ -615,7 +615,7 @@ entries:
     version: 1.0.6
   - apiVersion: v2
     appVersion: 1.0.3
-    created: "2026-10-26T12:01:56.339368+01:00"
+    created: "2026-10-27T10:32:37.468277+01:00"
     description: The MongoDB Collections Operator
     digest: 8c7852d00aee6cd1fb81a7ea27e92874781d78fdab10a39dcb9ee306ca544422
     home: https://github.com/wdonne/mongo-collections
@@ -634,7 +634,7 @@ entries:
     version: 1.0.5
   - apiVersion: v2
     appVersion: 1.0.2
-    created: "2026-10-26T12:01:56.339148+01:00"
+    created: "2026-10-27T10:32:37.468056+01:00"
     description: The MongoDB Collections Operator
     digest: 1f25f81739d6071e4ea8a65c0fad5eb461dacced8561c4ae32e0a40123362785
     home: https://github.com/wdonne/mongo-collections
@@ -653,7 +653,7 @@ entries:
     version: 1.0.4
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-10-26T12:01:56.33893+01:00"
+    created: "2026-10-27T10:32:37.467848+01:00"
     description: The MongoDB Collections Operator
     digest: 78182b6efb36c9c2a2457280f8dbc08a20fb9a872798f5f22546d834d27b1d38
     home: https://github.com/wdonne/mongo-collections
@@ -672,7 +672,7 @@ entries:
     version: 1.0.3
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.338707+01:00"
+    created: "2026-10-27T10:32:37.467633+01:00"
     description: The MongoDB Collections Operator
     digest: ef4967cb7c78791587204f53572a548d007f89882441fe5efbb3c7e10947fcb7
     home: https://github.com/wdonne/mongo-collections
@@ -691,7 +691,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.338487+01:00"
+    created: "2026-10-27T10:32:37.46724+01:00"
     description: The MongoDB Collections Operator
     digest: 842b7963046c499d0a1f74a449f5f140fea34bc53908999163664d2f5382e344
     home: https://github.com/wdonne/mongo-collections
@@ -710,7 +710,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.338267+01:00"
+    created: "2026-10-27T10:32:37.46692+01:00"
     description: The MongoDB Collections Operator
     digest: ed6f7ac65c158ceb276b7e2ba95666d8deb42c5951137bfe100d2a270d179f6d
     home: https://github.com/wdonne/mongo-collections
@@ -730,7 +730,7 @@ entries:
   mongo-jwt-claims:
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2026-10-26T12:01:56.341642+01:00"
+    created: "2026-10-27T10:32:37.469788+01:00"
     description: The Mongo JWT Claims service
     digest: 585ae3a78d172966b804adffb2befedb292b3e49f481055ba26110e09d3d79aa
     home: https://github.com/wdonne/mongo-jwt-claims
@@ -750,7 +750,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-10-26T12:01:56.341058+01:00"
+    created: "2026-10-27T10:32:37.469617+01:00"
     description: The Mongo JWT Claims service
     digest: ec20f91eb8652e36bdbfcdaff75aa28167a10ccaa5d375ec74447acfd5099d5c
     home: https://github.com/wdonne/mongo-jwt-claims
@@ -770,7 +770,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-10-26T12:01:56.340616+01:00"
+    created: "2026-10-27T10:32:37.469449+01:00"
     description: The Mongo JWT Claims service
     digest: 1d4bc0a16a87fc263702a14b53061958115cd88749b66780cb1ba9ccca63048b
     home: https://github.com/wdonne/mongo-jwt-claims
@@ -790,7 +790,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.340432+01:00"
+    created: "2026-10-27T10:32:37.469282+01:00"
     description: The Mongo JWT Claims service
     digest: 845860f41d3428c06a242532b318412cc6aa37ac46d42a68f70176455120ac6d
     home: https://github.com/wdonne/mongo-jwt-claims
@@ -811,7 +811,7 @@ entries:
   pincette-kafka-topics:
   - apiVersion: v2
     appVersion: 1.1.1
-    created: "2026-10-26T12:01:56.342072+01:00"
+    created: "2026-10-27T10:32:37.47013+01:00"
     description: The Kafka Topics Operator
     digest: e7171262a52c2b72ea3b4a1b81069ba17772dd7ace853a6c19416384774b1173
     home: https://github.com/wdonne/pincette-kafka-topics
@@ -830,7 +830,7 @@ entries:
     version: 1.1.6
   - apiVersion: v2
     appVersion: 1.1.1
-    created: "2026-10-26T12:01:56.341863+01:00"
+    created: "2026-10-27T10:32:37.469955+01:00"
     description: The Kafka Topics Operator
     digest: 0dec52604e9ac20a0adf41cb1411d868a2c639f7a14f20a79dc270629e596fb6
     home: https://github.com/wdonne/pincette-kafka-topics
@@ -850,7 +850,7 @@ entries:
   rotate-keys:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2026-10-26T12:01:56.34244+01:00"
+    created: "2026-10-27T10:32:37.470458+01:00"
     description: The rotate keys Kubernetes operator
     digest: d9780c96cf7e5a1af4c429845d0f0e8f84d2e0a535512e6b1bc2c4bb61f71807
     home: https://github.com/wdonne/rotate-keys
@@ -869,7 +869,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-10-26T12:01:56.342259+01:00"
+    created: "2026-10-27T10:32:37.470291+01:00"
     description: The rotate keys Kubernetes operator
     digest: ac298528b9c5de7a8d6a8159fda951f89a11c44890f17272128d5656dd05fc80
     home: https://github.com/wdonne/rotate-keys
@@ -886,4 +886,4 @@ entries:
     urls:
     - rotate-keys-1.0.0.tgz
     version: 1.0.0
-generated: "2026-10-26T12:01:56.328273+01:00"
+generated: "2026-10-27T10:32:37.459163+01:00"
