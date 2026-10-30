@@ -13,4 +13,4 @@ maintainers:
 name: json-streams-flat
 sources:
   - https://github.com/wdonne/json-streams-flat
-version: 1.0.0
+version: 1.0.1
