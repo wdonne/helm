@@ -6,8 +6,6 @@ metadata:
   {{- if .Values.annotations }}
   annotations: {{ toYaml .Values.annotations | nindent 4 }}
   {{- end }}
-  labels:
-    fullname: {{ .Release.Namespace }}-{{ .Chart.Name }}
 spec:
   {{- if .Values.replicas }}
   replicas: {{ .Values.replicas }}
@@ -19,6 +17,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: {{ .Chart.Name }}
+        fullname: {{ .Release.Namespace }}-{{ .Chart.Name }}
       {{- if .Values.podAnnotations }}
       annotations: {{ toYaml .Values.podAnnotations | nindent 8 }}
       {{- end }}
