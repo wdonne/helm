@@ -7,7 +7,9 @@ metadata:
   annotations: {{ toYaml .Values.annotations | nindent 4 }}
   {{- end }}
 spec:
+  {{- if .Values.replicas }}
   replicas: {{ .Values.replicas }}
+  {{- end }}
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ .Chart.Name }}
@@ -15,6 +17,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: {{ .Chart.Name }}
+        fullname: {{ .Release.Namespace }}-{{ .Chart.Name }}
       {{- if .Values.podAnnotations }}
       annotations: {{ toYaml .Values.podAnnotations | nindent 8 }}
       {{- end }}
@@ -51,6 +54,13 @@ spec:
           {{- if .Values.additionalVolumeMounts }}
           {{ toYaml .Values.additionalVolumeMounts | nindent 12 }}
           {{- end }}
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              fullname: {{ .Release.Namespace }}-{{ .Chart.Name }}
       {{- if .Values.nodeSelector }}
       nodeSelector: {{ toYaml .Values.nodeSelector | nindent 8 }}
       {{- end }}
